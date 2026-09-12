@@ -98,7 +98,7 @@ for (const [index, entry] of sortedEntries.entries()) {
   // プレースホルダー置換
   const descriptionOneLine = entry.description.replace(/\n/g, " ").trim();
   const descriptionMultiline = entry.description.trim();
-  const membersYaml = `[${memberNames.map((name) => `"${name}"`).join(", ")}]`;
+  const membersYaml = memberNames.map((name) => `\n  - "${name}"`).join("");
   const youtubeId = entry.youtube_id || "";
 
   const replacements = {
